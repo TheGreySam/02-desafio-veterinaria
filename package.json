@@ -12,6 +12,9 @@
   },
   "author": "TheGreySam",
   "license": "ISC",
+  "dependencies": {
+    "moment": "^2.19.1"
+  },
   "bugs": {
     "url": "https://github.com/TheGreySam/02-desafio-veterinaria/issues"
   },
