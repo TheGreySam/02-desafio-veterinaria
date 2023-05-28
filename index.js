@@ -1,15 +1,8 @@
-//import { writeFileSync } from 'fs';
+import {writeFile} from "fs";
 
-//fs.writeFileSync("texto.txt", "soy un string en ese txt");
-//writeFileSync('texto2.json', "texto del documento3")
-
-//console.log("el archivo se creó");
-
-import fs from "fs";
-
-fs.writeFile("citas.json", "Hello from node", (err) => {
-    if (err) {
-        console.log(err);
+writeFile("citas.json", "Hello from node", (e) => {
+    if (e) {
+        console.log("Error: El archivo no pudo ser creado");
     } else {
         console.log("archivo creado")
     }
