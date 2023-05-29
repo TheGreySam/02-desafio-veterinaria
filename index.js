@@ -8,12 +8,18 @@ const [elementos] = argv.slice(2);
 
 const addCita = async (elementos) => {
     try {
-        const todos = JSON.parse(await readFile('citas.json'))
-        await writeFile("citas.json", JSON.stringify({
-            nombre: elementos, edad: 2, animal: "perrito", color: "blanco", enfermedad: "vomitos"
-        }))
+        const citas = JSON.parse(await readFile('citas.json'));
+        const cita = {
+            nombre: elementos, 
+            edad: elementos, 
+            animal: elementos, 
+            color: elementos, 
+            enfermedad: elementos
+        }
+        citas.push(cita);
+        await writeFile("citas.json", JSON.stringify(citas))
     } catch (error) {
-        console.log(first)
+        console.log(error)
     }
 }
 
