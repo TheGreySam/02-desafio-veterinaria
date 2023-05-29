@@ -3,28 +3,18 @@ import { argv } from "node:process";
 
 //const { operacion } = require('./operaciones.js')
 
-const elementos = argv.slice[2];
-console.log(elementos);
-const citas = [
-    {
-        nombre: "Benito",
-        edad: "2 años",
-        animal: "perro",
-        color: "blanco",
-        enfermedad: "vomitos"
-    }
-]
+const [elementos] = argv.slice(2);
+//console.log(elementos);
 
-try {
-    await writeFile("citas.json", JSON.stringify(citas));
-    //const texto = await readFile("citas.json")
-    console.log("archivo creado: ");
-    //console.log(texto.toString());
-    const texto = await readFile("citas.json", 'utf-8');
-    //console.log(texto)
-    /* JSON.parse(texto).forEach((texto) => {
-        console.log(texto)
-    }) */
-} catch (error) {
-    console.log(error);
+const addCita = async (elementos) => {
+    try {
+        const todos = JSON.parse(await readFile('citas.json'))
+        await writeFile("citas.json", JSON.stringify({
+            nombre: elementos, edad: 2, animal: "perrito", color: "blanco", enfermedad: "vomitos"
+        }))
+    } catch (error) {
+        console.log(first)
+    }
 }
+
+addCita(elementos)
