@@ -9,6 +9,9 @@ writeFile("citas.json", "Hello from node", (e) => {
 }); */
 
 import { writeFile, readFile } from "node:fs/promises";
+import { argv } from "node:process";
+
+console.log(argv);
 
 const citas = [
     {
@@ -22,8 +25,11 @@ const citas = [
 
 try {
     await writeFile("citas.json", JSON.stringify(citas));
-    const texto = await readFile("citas.json")
-    console.log("archivo creado: ", texto.toString());
+    //const texto = await readFile("citas.json")
+    console.log("archivo creado: ");
+    //console.log(texto.toString());
+    const texto = await readFile("citas.json", 'utf-8')
+    console.log(texto)
 } catch (error) {
     console.log(error);
 }
