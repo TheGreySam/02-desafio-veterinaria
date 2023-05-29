@@ -28,8 +28,11 @@ try {
     //const texto = await readFile("citas.json")
     console.log("archivo creado: ");
     //console.log(texto.toString());
-    const texto = await readFile("citas.json", 'utf-8')
-    console.log(texto)
+    const texto = await readFile("citas.json", 'utf-8');
+    //console.log(texto)
+    JSON.parse(texto).forEach((texto) => {
+        console.log(texto)
+    })
 } catch (error) {
     console.log(error);
 }
